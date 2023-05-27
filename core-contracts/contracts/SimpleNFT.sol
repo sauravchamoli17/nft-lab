@@ -36,6 +36,6 @@ contract SimpleNFT is ABaseNFT {
         super._beforeTokenTransfer(from, to, tokenId, batchSize);
 
         // TODO: your code goes here
-
+        require(from == address(0) || to == address(0), "You cannot transfer this token as it is a SBT!");
     }
 }
